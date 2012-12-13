@@ -1,0 +1,26 @@
+#!/bin/sh
+
+FILES="util.cmo drawing.cmo vector.cmo atom.cmo drawer.cmo driver.cmo main.cmo"
+
+LIBS="str.cma unix.cma nums.cma bigarray.cma sdl.cma sdlloader.cma sdlttf.cma 
+      sdlmixer.cma"
+
+
+OPTFILES="util.cmx drawing.cmx vector.cmx atom.cmx drawer.cmx driver.cmx main.cmx"
+
+OPTLIBS="str.cmxa unix.cmxa nums.cmxa bigarray.cmxa sdl.cmxa sdlloader.cmxa sdlttf.cmxa 
+      sdlmixer.cmxa"
+
+
+OCAMLC=ocamlc
+OCAMLCP=ocamlcp
+OCAMLOPT=ocamlopt
+
+OCAMLSDLLIB=`ocamlfind query sdl`
+
+OUTNAME=physicstoy
+
+
+#$OCAMLC -o $OUTNAME -g -I $OCAMLSDLLIB $LIBS $FILES
+$OCAMLOPT -o $OUTNAME -I $OCAMLSDLLIB $OPTLIBS $OPTFILES
+

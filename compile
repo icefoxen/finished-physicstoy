@@ -1,0 +1,19 @@
+#!/bin/sh
+
+FILES="util.ml drawing.ml vector.ml atom.ml drawer.ml driver.ml main.ml"
+
+LIBS="str.cma unix.cma nums.cma bigarray.cma sdl.cma sdlloader.cma sdlttf.cma 
+      sdlmixer.cma"
+
+OPTLIBS="str.cmxa unix.cmxa nums.cmxa bigarray.cmxa sdl.cmxa sdlloader.cmxa sdlttf.cmxa sdlmixer.cmxa"
+
+OCAMLC=ocamlc
+OCAMLCP=ocamlcp
+OCAMLOPT=ocamlopt
+
+OCAMLSDLLIB=`ocamlfind query sdl`
+
+
+#$OCAMLC -c -g -I $OCAMLSDLLIB $LIBS $FILES 
+$OCAMLOPT -c -I $OCAMLSDLLIB $OPTLIBS $FILES
+

@@ -1,0 +1,20 @@
+Better temperature
+UI --like, config file that doesn't involve recompilation
+Pressure factor --scales size of atoms
+
+A wall temperature and ambient temperature would be interesting, too.  Or at
+least provide an easier way to get the energy level you want.
+
+Vary the timestep based on the fastest-moving atom?
+
+
+Compounds!
+Diff sizes, different forces... oh, and toss in some dross that doesn't react
+at all.
+Play with different force factors --linear, log, exponential, etc.
+
+Someday, maybe, if it's worth it:
+Gravity?
+Rotation
+Springs
+
